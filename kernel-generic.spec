@@ -4,10 +4,10 @@
 Name:          kernel-generic
 Summary:       The Linux Kernel for Mandriva systems
 License:       GPLv2
-Version:       3.1.4
+Version:       3.1.5
 Release:       %mkrel 1.1
 URL:           http://www.kernel.org
-Source:        kernel-generic-3.1.4-1.tar.bz2
+Source:        kernel-generic-3.1.5-1.tar.bz2
 ExclusiveArch: %ix86 
 BuildRoot:     %{_tmppath}/%{name}-%{version}-root
 
@@ -57,12 +57,12 @@ This package provides the kernel's debug information required
 by some binary object tools like kgdb, perf, etc...
 
 %prep
-%setup -q -n kernel-generic-3.1.4-1
+%setup -q -n kernel-generic-3.1.5-1
 
 %build
 make defconfig
 make -s kernelrelease
-test $(make -s kernelrelease) = 3.1.4-1.1-generic
+test $(make -s kernelrelease) = 3.1.5-1.1-generic
 make %{?_smp_mflags}
 
 %install
@@ -70,24 +70,24 @@ make -s INSTALL_MOD_PATH=%{buildroot} modules_install
 find %{buildroot} -name \*.ko -exec chmod u+x {} \;
 
 mkdir -p %{buildroot}/boot
-cp %{bzImage} %{buildroot}/boot/vmlinuz-3.1.4-1.1-generic
-cp System.map %{buildroot}/boot/System.map-3.1.4-1.1-generic
-cp .config    %{buildroot}/boot/config-3.1.4-1.1-generic
-ln -snf /usr/src/devel/3.1.4-1.1-generic %{buildroot}/lib/modules/3.1.4-1.1-generic/build
-ln -snf build %{buildroot}/lib/modules/3.1.4-1.1-generic/source
+cp %{bzImage} %{buildroot}/boot/vmlinuz-3.1.5-1.1-generic
+cp System.map %{buildroot}/boot/System.map-3.1.5-1.1-generic
+cp .config    %{buildroot}/boot/config-3.1.5-1.1-generic
+ln -snf /usr/src/devel/3.1.5-1.1-generic %{buildroot}/lib/modules/3.1.5-1.1-generic/build
+ln -snf build %{buildroot}/lib/modules/3.1.5-1.1-generic/source
 
-mkdir -p %{buildroot}/usr/src/devel/3.1.4-1.1-generic
+mkdir -p %{buildroot}/usr/src/devel/3.1.5-1.1-generic
 cat develfiles-%asmarch.list >>develfiles.list
-rsync -ar --files-from=develfiles.list . %{buildroot}/usr/src/devel/3.1.4-1.1-generic
+rsync -ar --files-from=develfiles.list . %{buildroot}/usr/src/devel/3.1.5-1.1-generic
 
 %post -n kernel-generic
-/sbin/installkernel %{instkern_opts} 3.1.4-1.1-generic
+/sbin/installkernel %{instkern_opts} 3.1.5-1.1-generic
 
 %preun -n kernel-generic
-/sbin/installkernel -R 3.1.4-1.1-generic
+/sbin/installkernel -R 3.1.5-1.1-generic
 
 %postun -n kernel-generic
-/sbin/kernel_remove_initrd 3.1.4-1.1-generic
+/sbin/kernel_remove_initrd 3.1.5-1.1-generic
 
 %clean
 rm -rf %{buildroot}
@@ -95,19 +95,19 @@ rm -rf %{buildroot}
 %files -n kernel-generic
 %defattr (-, root, root)
 %dir /lib/modules
-/lib/modules/3.1.4-1.1-generic
+/lib/modules/3.1.5-1.1-generic
 /boot
 
 %files -n kernel-generic-devel
 %defattr (-, root, root)
-/usr/src/devel/3.1.4-1.1-generic
+/usr/src/devel/3.1.5-1.1-generic
 
 %files -n kernel-generic-debuginfo -f debugfiles.list
 %defattr (-, root, root)
 
 %changelog
-* Thu Dec 08 2011 Franck Bui <franck.bui@mandriva.com> 3.1.4-1.1-generic
-  + Mandriva Release v3.1.4-1
+* Fri Dec 09 2011 Franck Bui <franck.bui@mandriva.com> 3.1.5-1.1-generic
+  + Mandriva Release v3.1.5-1
   + pci: Rework ASPM disable code
   + usb: ehci: make HC see up-to-date qh/qtd descriptor ASAP
   + btrfs: btrfs_calc_avail_data_space cope with no read/write devices V2
