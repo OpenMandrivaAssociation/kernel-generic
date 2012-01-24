@@ -81,11 +81,13 @@ AutoReqProv:		no
 
 %description -n %{name}
 
-This kernel is compiled for desktop use, single or multiple i586 processor(s)/core(s),
-less than 4GB RAM, using voluntary preempt, CFS cpu scheduler and cfq i/o scheduler.
-This kernel relies on in-kernel smp alternatives to switch between up & smp
-mode depending on detected hardware. To force the kernel to boot in single
-processor mode, use the 'nosmp' boot parameter.
+This kernel is compiled for desktop use, single or multiple i586
+processor(s)/core(s), less than 4GB RAM, using voluntary preempt, CFS
+cpu scheduler and cfq i/o scheduler.
+
+This kernel relies on in-kernel smp alternatives to switch between up
+& smp mode depending on detected hardware. To force the kernel to boot
+in single processor mode, use the 'nosmp' boot parameter.
 
 
 %if %build_devel
