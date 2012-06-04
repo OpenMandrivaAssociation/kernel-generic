@@ -5,7 +5,7 @@
 %define version		3.4.0
 %define src_uname_r	3.4.0-2
 %define source_release	2
-%define build_release	1%{nil}
+%define build_release	2%{nil}
 %define archive		kernel-generic-3.4.0-2.1
 
 %define build_srpm	1
@@ -20,7 +20,7 @@
 
 # binary specific macros
 %define flavour		generic
-%define uname_r		3.4.0-2.1-generic
+%define uname_r		3.4.0-2.2-generic
 %define exclusive	%ix86
 %define kdevel_path	/usr/src/devel/%{uname_r}
 
