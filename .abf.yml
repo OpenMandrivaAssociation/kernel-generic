@@ -1,0 +1,6 @@
+sources:
+  "3.4.1-1.2-generic-develfiles.list:"	84fec834aa9658e8e5ee930f9086fea4a5f77f81
+  "3.4.1-1.2-generic-output-develfiles.list:"	a600a394ead36c066a7a0218530ef41803859b5b
+  "3.4.1-1.2-generic-x86_32-defconfig:"	490d41c57410dc06a01c28d0dfc018e82c4b674c
+  "3.4.1-1.2-generic-x86-develfiles.list:"	816f568625dbc8331752d36d74dacba438119059
+  "kernel-generic-3.4.1-1.1.tar.bz2:"	7220b256ce2d1fbef3e4ccaff27683b7d695791b
