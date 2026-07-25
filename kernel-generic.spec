@@ -41,7 +41,7 @@ Name:			%{name}
 Summary:		The Linux Kernel for Mandriva %{flavour} systems
 URL:			https://www.kernel.org
 Version:		%{version}
-Release:		%mkrel %{source_release}.%{build_release}
+Release:		%{source_release}.%{build_release}.1
 License:		GPLv2
 Group:			System/Kernel and hardware
 Provides:		kernel = %{version}-%{release}
